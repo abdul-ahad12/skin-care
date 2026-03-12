@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Aishwarya Khandge | Dermatologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ═══════════════════════════════════════════
+   CSS CUSTOM PROPERTIES & THEME
+   ═══════════════════════════════════════════ */
+:root {
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body: 'DM Sans', sans-serif;
+  --ff-hindi: 'Noto Sans Devanagari', sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="light"] {
+  --bg-primary: #FDFAF6;
+  --bg-secondary: #F5EDE3;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFF9F2;
+  --bg-glass: rgba(255,255,255,0.72);
+  --bg-glass-border: rgba(180,160,130,0.18);
+  --text-primary: #1A1612;
+  --text-secondary: #6B5E50;
+  --text-tertiary: #9C8E7E;
+  --accent: #B8860B;
+  --accent-light: #DAA520;
+  --accent-glow: rgba(184,134,11,0.15);
+  --accent-glow-strong: rgba(184,134,11,0.3);
+  --hero-overlay: linear-gradient(135deg, rgba(253,250,246,0.92) 0%, rgba(245,237,227,0.85) 50%, rgba(253,250,246,0.78) 100%);
+  --shadow-sm: 0 2px 8px rgba(26,22,18,0.04);
+  --shadow-md: 0 8px 32px rgba(26,22,18,0.06);
+  --shadow-lg: 0 24px 64px rgba(26,22,18,0.08);
+  --shadow-glow: 0 0 40px rgba(184,134,11,0.08);
+  --border-subtle: rgba(26,22,18,0.06);
+  --divider: rgba(26,22,18,0.08);
+  --star: #E8A800;
+  --success: #2E7D32;
+  --whatsapp: #25D366;
+  --gradient-hero: linear-gradient(160deg, #FDFAF6 0%, #F5EDE3 40%, #E8DCC8 100%);
+  --noise-opacity: 0.03;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0E0C0A;
+  --bg-secondary: #1A1612;
+  --bg-card: #1E1A16;
+  --bg-card-hover: #262018;
+  --bg-glass: rgba(14,12,10,0.82);
+  --bg-glass-border: rgba(184,134,11,0.15);
+  --text-primary: #F5EDE3;
+  --text-secondary: #B8A98E;
+  --text-tertiary: #7A6E5E;
+  --accent: #DAA520;
+  --accent-light: #E8BE4A;
+  --accent-glow: rgba(218,165,32,0.12);
+  --accent-glow-strong: rgba(218,165,32,0.25);
+  --hero-overlay: linear-gradient(135deg, rgba(14,12,10,0.94) 0%, rgba(26,22,18,0.88) 50%, rgba(14,12,10,0.82) 100%);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.3);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 60px rgba(218,165,32,0.06);
+  --border-subtle: rgba(255,255,255,0.06);
+  --divider: rgba(255,255,255,0.08);
+  --star: #F0C040;
+  --success: #66BB6A;
+  --whatsapp: #25D366;
+  --gradient-hero: linear-gradient(160deg, #0E0C0A 0%, #1A1612 40%, #201A10 100%);
+  --noise-opacity: 0.04;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--ff-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.6s var(--ease-out-expo), color 0.6s var(--ease-out-expo);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+body.hindi { font-family: var(--ff-hindi), var(--ff-body); }
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: var(--noise-opacity);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Staggered children */
+.stagger-children > * { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--bg-glass-border);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.navbar.scrolled {
+  height: 64px;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--ff-display);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.nav-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.nav-brand-text .name {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+.nav-brand-text .title {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Location Tabs */
+.location-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-secondary);
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.loc-tab {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9px;
+  color: var(--text-tertiary);
+  transition: all 0.35s var(--ease-out-expo);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.loc-tab:hover { color: var(--text-primary); }
+.loc-tab.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* Nav Controls */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: all 0.3s var(--ease-out-expo);
+  position: relative;
+}
+.nav-btn:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+.nav-btn .label {
+  font-size: 10px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 4px;
+  letter-spacing: 0.05em;
+}
+
+.nav-cta {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  letter-spacing: 0.02em;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--accent-glow-strong);
+}
+
+/* Mobile Nav */
+.mobile-menu-btn {
+  display: none;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  z-index: 999;
+  padding: 100px 32px 32px;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s var(--ease-out-expo);
+}
+.mobile-nav.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.mobile-nav a {
+  font-size: 24px;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.mobile-loc-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.mobile-loc-tabs .loc-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s var(--ease-out-expo);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+}
+
+/* Animated gradient orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: orbFloat 12s var(--ease-out-expo) infinite alternate;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--accent-glow-strong), transparent 70%);
+  top: -10%; right: -5%;
+  animation-delay: 0s;
+}
+.hero-orb-2 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(184,134,11,0.12), transparent 70%);
+  bottom: 10%; left: -5%;
+  animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -40px) scale(1.15); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text { max-width: 560px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-badge i { font-size: 10px; }
+
+.hero-location-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-location-name i { font-size: 11px; }
+
+.hero-title {
+  font-family: var(--ff-display);
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+}
+.hero-stat-value {
+  font-family: var(--ff-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.35s var(--ease-out-expo);
+  letter-spacing: 0.02em;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px var(--accent-glow-strong);
+}
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+/* Hero visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 400px;
+  height: 480px;
+}
+
+.hero-image-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 200px 200px 40px 40px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  position: relative;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border: 2px solid var(--accent-glow);
+}
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating cards around hero image */
+.hero-float-card {
+  position: absolute;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  animation: floatCard 6s var(--ease-out-expo) infinite alternate;
+}
+.hero-float-card i { color: var(--accent); font-size: 18px; }
+.hero-float-card .fc-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.hero-float-card .fc-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+.hero-float-card .fc-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.fc-rating { top: 60px; left: -40px; animation-delay: 0s; }
+.fc-patients { bottom: 100px; right: -50px; animation-delay: -2s; }
+.fc-experience { bottom: 40px; left: -20px; animation-delay: -4s; }
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ═══════════════════════════════════════════
+   SECTION STYLES
+   ═══════════════════════════════════════════ */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.section-tag::before,
+.section-tag::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image-container {
+  position: relative;
+}
+.about-image {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/5;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-accent-box {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 40px var(--accent-glow-strong);
+}
+.about-accent-box .number {
+  font-family: var(--ff-display);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+.about-accent-box .text {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.about-text h3 {
+  font-family: var(--ff-display);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+.about-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-secondary);
+  border-radius: 14px;
+  transition: all 0.3s var(--ease-out-expo);
+}
+.about-highlight-item:hover {
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+}
+.about-highlight-item i {
+  color: var(--accent);
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+.about-highlight-item span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+   ═══════════════════════════════════════════ */
+#services { background: var(--bg-secondary); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all 0.45s var(--ease-out-expo);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--accent-glow);
+}
+
+.service-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  transition: all 0.35s var(--ease-out-expo);
+}
+.service-card:hover .service-icon {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════
+   REVIEWS
+   ═══════════════════════════════════════════ */
+.reviews-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.review-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 16px; right: 24px;
+  font-family: var(--ff-display);
+  font-size: 64px;
+  color: var(--accent);
+  opacity: 0.12;
+  line-height: 1;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 14px;
+}
+.review-stars i { color: var(--star); font-size: 14px; }
+
+.review-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-glow), var(--accent-glow-strong));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.review-author-info .name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.review-author-info .date {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.review-overall {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid var(--border-subtle);
+}
+.review-overall .big-rating {
+  font-family: var(--ff-display);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.review-overall .stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px 0 8px;
+}
+.review-overall .stars-row i { color: var(--star); font-size: 24px; }
+.review-overall .review-count {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+/* ═══════════════════════════════════════════
+   LOCATIONS
+   ═══════════════════════════════════════════ */
+#locations { background: var(--bg-secondary); }
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.location-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.45s var(--ease-out-expo);
+}
+.location-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.location-map {
+  height: 180px;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+.location-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: all 0.5s var(--ease-out-expo);
+}
+.location-card:hover .location-map img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.location-map-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-pin {
+  width: 48px; height: 48px;
+  background: var(--accent);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--accent-glow-strong);
+  animation: pinBounce 2s var(--ease-out-expo) infinite;
+}
+.location-pin i {
+  transform: rotate(45deg);
+  color: #fff;
+  font-size: 18px;
+}
+
+@keyframes pinBounce {
+  0%, 100% { transform: rotate(-45deg) translateY(0); }
+  50% { transform: rotate(-45deg) translateY(-6px); }
+}
+
+.location-info {
+  padding: 28px;
+}
+.location-info h3 {
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.location-detail {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.location-detail i {
+  color: var(--accent);
+  width: 16px;
+  text-align: center;
+  margin-top: 3px;
+  font-size: 14px;
+}
+.location-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.location-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s var(--ease-out-expo);
+}
+.location-btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+}
+.location-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--accent-glow); }
+.location-btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+.location-btn-secondary:hover { background: var(--accent-glow); color: var(--accent); }
+
+/* ═══════════════════════════════════════════
+   CONTACT / CTA
+   ═══════════════════════════════════════════ */
+.cta-section {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+.cta-section h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.cta-section p {
+  font-size: 17px;
+  opacity: 0.9;
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-cta-primary {
+  background: #fff;
+  color: var(--accent);
+  padding: 16px 36px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.35s var(--ease-out-expo);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.btn-cta-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+.btn-cta-secondary {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.35s var(--ease-out-expo);
+}
+.btn-cta-secondary:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  background: var(--bg-secondary);
+  padding: 60px 0 32px;
+  border-top: 1px solid var(--divider);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-brand .name {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.footer-brand .desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+.footer-social-btn {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 16px;
+  transition: all 0.3s var(--ease-out-expo);
+}
+.footer-social-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--accent); }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--divider);
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ═══════════════════════════════════════════
+   WHATSAPP FLOAT
+   ═══════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background: var(--whatsapp);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+  transition: all 0.35s var(--ease-out-expo);
+  animation: whatsappPulse 3s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35); }
+  50% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35), 0 0 0 12px rgba(37, 211, 102, 0.08); }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-text { max-width: 100%; margin: 0 auto; }
+  .hero-subtitle { margin: 0 auto 36px; }
+  .hero-stats { justify-content: center; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-wrapper { grid-template-columns: repeat(2, 1fr); }
+  .locations-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; text-align: center; }
+  .about-highlights { max-width: 400px; margin: 28px auto 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .location-tabs { display: none; }
+  .mobile-menu-btn { display: flex; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-wrapper { grid-template-columns: 1fr; }
+  .locations-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  .footer-socials { justify-content: center; }
+  .location-tabs { display: none; }
+  .nav-cta { display: none; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .about-accent-box { right: 10px; bottom: -10px; }
+}
+
+@media (max-width: 480px) {
+  .nav-brand-text .name { font-size: 13px; }
+  .hero { padding: 90px 0 50px; }
+  .about-highlights { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+     ═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-logo">AK</div>
+      <div class="nav-brand-text">
+        <span class="name" data-en="Dr. Aishwarya Khandge" data-hi="डॉ. ऐश्वर्या खांडगे">Dr. Aishwarya Khandge</span>
+        <span class="title" data-en="Dermatologist" data-hi="त्वचारोग विशेषज्ञ">Dermatologist</span>
+      </div>
+    </div>
+
+    <div class="location-tabs" id="locationTabs">
+      <button class="loc-tab active" data-loc="0" data-en="Sunder Clinic" data-hi="सुंदर क्लिनिक">Sunder Clinic</button>
+      <button class="loc-tab" data-loc="1" data-en="Shree Clinic" data-hi="श्री क्लिनिक">Shree Clinic</button>
+      <button class="loc-tab" data-loc="2" data-en="Chandrika Clinic" data-hi="चंद्रिका क्लिनिक">Chandrika Clinic</button>
+    </div>
+
+    <div class="nav-controls">
+      <button class="nav-btn" id="themeTog" title="Toggle Theme" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="nav-btn" id="langTog" title="भाषा बदलें" onclick="toggleLang()">
+        <i class="fas fa-language"></i>
+        <span class="label" id="langLabel">HI</span>
+      </button>
+      <a href="tel:09987126129" class="nav-cta" data-en="Book Now" data-hi="अपॉइंटमेंट बुक करें">
+        <i class="fas fa-phone"></i>&nbsp; Book Now
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobile()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobile()" data-en="About" data-hi="परिचय">About</a>
+  <a href="#services" onclick="closeMobile()" data-en="Services" data-hi="सेवाएं">Services</a>
+  <a href="#reviews" onclick="closeMobile()" data-en="Reviews" data-hi="समीक्षा">Reviews</a>
+  <a href="#locations" onclick="closeMobile()" data-en="Locations" data-hi="स्थान">Locations</a>
+  <div class="mobile-loc-tabs">
+    <button class="loc-tab active" data-loc="0" data-en="Sunder Clinic, Kanjurmarg" data-hi="सुंदर क्लिनिक, कांजुरमार्ग">Sunder Clinic, Kanjurmarg</button>
+    <button class="loc-tab" data-loc="1" data-en="Shree Clinic, Mulund" data-hi="श्री क्लिनिक, मुलुंड">Shree Clinic, Mulund</button>
+    <button class="loc-tab" data-loc="2" data-en="Chandrika Clinic, Thane" data-hi="चंद्रिका क्लिनिक, ठाणे">Chandrika Clinic, Thane</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge reveal">
+          <i class="fas fa-award"></i>
+          <span data-en="Top Rated Dermatologist" data-hi="शीर्ष त्वचारोग विशेषज्ञ">Top Rated Dermatologist</span>
+        </div>
+
+        <div class="hero-location-name reveal" id="heroLocName">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Sunder Clinic — Kanjurmarg East</span>
+        </div>
+
+        <h1 class="hero-title reveal" id="heroTitle">
+          Radiant Skin,<br><span class="highlight" id="heroHighlight">Confident You</span>
+        </h1>
+
+        <p class="hero-subtitle reveal" id="heroSubtitle">
+          Expert dermatological care by Dr. Aishwarya Khandge. From advanced skin treatments to personalized skincare — your journey to healthy, glowing skin starts here.
+        </p>
+
+        <div class="hero-stats reveal">
+          <div class="hero-stat">
+            <span class="hero-stat-value">5.0</span>
+            <span class="hero-stat-label" data-en="Google Rating" data-hi="गूगल रेटिंग">Google Rating</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">10K+</span>
+            <span class="hero-stat-label" data-en="Patients Treated" data-hi="मरीजों का इलाज">Patients Treated</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">3</span>
+            <span class="hero-stat-label" data-en="Clinic Locations" data-hi="क्लिनिक स्थान">Clinic Locations</span>
+          </div>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a href="tel:09987126129" class="btn btn-primary">
+            <i class="fas fa-calendar-check"></i>
+            <span data-en="Book Appointment" data-hi="अपॉइंटमेंट बुक करें">Book Appointment</span>
+          </a>
+          <a href="#services" class="btn btn-secondary">
+            <i class="fas fa-hand-holding-medical"></i>
+            <span data-en="Our Services" data-hi="हमारी सेवाएं">Our Services</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-right">
+        <div class="hero-image-wrapper">
+          <div class="hero-image-frame">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=750&fit=crop&crop=face" alt="Dr. Aishwarya Khandge">
+          </div>
+          <div class="hero-float-card fc-rating">
+            <i class="fas fa-star"></i>
+            <div class="fc-text">
+              <span class="fc-label" data-en="Google Rating" data-hi="गूगल रेटिंग">Google Rating</span>
+              <span class="fc-value">5.0 ★★★★★</span>
+            </div>
+          </div>
+          <div class="hero-float-card fc-patients">
+            <i class="fas fa-users"></i>
+            <div class="fc-text">
+              <span class="fc-label" data-en="Happy Patients" data-hi="खुश मरीज">Happy Patients</span>
+              <span class="fc-value">10,000+</span>
+            </div>
+          </div>
+          <div class="hero-float-card fc-experience">
+            <i class="fas fa-certificate"></i>
+            <div class="fc-text">
+              <span class="fc-label" data-en="Certified" data-hi="प्रमाणित">Certified</span>
+              <span class="fc-value" data-en="MD Dermatology" data-hi="एमडी त्वचा">MD Dermatology</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-container reveal-left">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=750&fit=crop" alt="Clinic Interior">
+        </div>
+        <div class="about-accent-box">
+          <div class="number">10+</div>
+          <div class="text" data-en="Years Experience" data-hi="वर्ष अनुभव">Years Experience</div>
+        </div>
+      </div>
+
+      <div class="about-text reveal-right">
+        <div class="section-tag" data-en="About the Doctor" data-hi="डॉक्टर के बारे में">About the Doctor</div>
+        <h3 data-en="Dedicated to Your Skin Health" data-hi="आपकी त्वचा स्वास्थ्य के लिए समर्पित">Dedicated to Your Skin Health</h3>
+        <p data-en="Dr. Aishwarya Khandge is a highly qualified dermatologist with expertise in medical and cosmetic dermatology. With a patient-first approach, she provides personalized treatment plans tailored to each individual's unique skin needs." data-hi="डॉ. ऐश्वर्या खांडगे एक अत्यधिक योग्य त्वचारोग विशेषज्ञ हैं जो चिकित्सा और कॉस्मेटिक त्वचाविज्ञान में विशेषज्ञता रखती हैं। मरीज-प्रथम दृष्टिकोण के साथ, वे प्रत्येक व्यक्ति की अनूठी त्वचा आवश्यकताओं के अनुरूप व्यक्तिगत उपचार योजनाएं प्रदान करती हैं।">Dr. Aishwarya Khandge is a highly qualified dermatologist with expertise in medical and cosmetic dermatology. With a patient-first approach, she provides personalized treatment plans tailored to each individual's unique skin needs.</p>
+        <p data-en="Practicing across three clinics in Mumbai and Thane, she ensures accessible, world-class dermatological care for every patient." data-hi="मुंबई और ठाणे में तीन क्लीनिकों में प्रैक्टिस करते हुए, वे हर मरीज के लिए सुलभ, विश्व स्तरीय त्वचाविज्ञान देखभाल सुनिश्चित करती हैं।">Practicing across three clinics in Mumbai and Thane, she ensures accessible, world-class dermatological care for every patient.</p>
+
+        <div class="about-highlights stagger-children">
+          <div class="about-highlight-item reveal" style="--i:0">
+            <i class="fas fa-graduation-cap"></i>
+            <span data-en="MD Dermatology" data-hi="एमडी त्वचाविज्ञान">MD Dermatology</span>
+          </div>
+          <div class="about-highlight-item reveal" style="--i:1">
+            <i class="fas fa-microscope"></i>
+            <span data-en="Advanced Procedures" data-hi="उन्नत प्रक्रियाएं">Advanced Procedures</span>
+          </div>
+          <div class="about-highlight-item reveal" style="--i:2">
+            <i class="fas fa-heart"></i>
+            <span data-en="Patient-Centric Care" data-hi="मरीज-केंद्रित देखभाल">Patient-Centric Care</span>
+          </div>
+          <div class="about-highlight-item reveal" style="--i:3">
+            <i class="fas fa-clinic-medical"></i>
+            <span data-en="3 Clinic Locations" data-hi="3 क्लिनिक स्थान">3 Clinic Locations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="What We Offer" data-hi="हम क्या प्रदान करते हैं">What We Offer</div>
+      <h2 class="section-title" data-en="Expert Dermatology Services" data-hi="विशेषज्ञ त्वचाविज्ञान सेवाएं">Expert Dermatology Services</h2>
+      <p class="section-subtitle" data-en="Comprehensive skin care solutions using the latest technology and evidence-based treatments." data-hi="नवीनतम तकनीक और साक्ष्य-आधारित उपचारों का उपयोग करके व्यापक त्वचा देखभाल समाधान।">Comprehensive skin care solutions using the latest technology and evidence-based treatments.</p>
+    </div>
+
+    <div class="services-grid stagger-children">
+      <div class="service-card reveal" style="--i:0">
+        <div class="service-icon"><i class="fas fa-allergies"></i></div>
+        <h3 data-en="Acne & Scar Treatment" data-hi="मुंहासे और निशान उपचार">Acne & Scar Treatment</h3>
+        <p data-en="Advanced acne management and scar revision using chemical peels, microneedling, and laser therapies for clear, smooth skin." data-hi="स्वच्छ, चिकनी त्वचा के लिए केमिकल पील, माइक्रोनीडलिंग और लेजर थेरेपी का उपयोग करके उन्नत मुंहासे प्रबंधन और निशान उपचार।">Advanced acne management and scar revision using chemical peels, microneedling, and laser therapies for clear, smooth skin.</p>
+      </div>
+      <div class="service-card reveal" style="--i:1">
+        <div class="service-icon"><i class="fas fa-sun"></i></div>
+        <h3 data-en="Pigmentation & Tan Removal" data-hi="रंजकता और टैन हटाना">Pigmentation & Tan Removal</h3>
+        <p data-en="Targeted treatments for melasma, dark spots, uneven skin tone, and sun damage to restore your natural radiance." data-hi="मेलास्मा, काले धब्बे, असमान त्वचा टोन और सूरज की क्षति के लिए लक्षित उपचार।">Targeted treatments for melasma, dark spots, uneven skin tone, and sun damage to restore your natural radiance.</p>
+      </div>
+      <div class="service-card reveal" style="--i:2">
+        <div class="service-icon"><i class="fas fa-magic"></i></div>
+        <h3 data-en="Anti-Aging & Botox" data-hi="एंटी-एजिंग और बोटोक्स">Anti-Aging & Botox</h3>
+        <p data-en="Rejuvenate your appearance with dermal fillers, Botox, thread lifts, and advanced anti-aging protocols." data-hi="डर्मल फिलर, बोटोक्स, थ्रेड लिफ्ट और उन्नत एंटी-एजिंग प्रोटोकॉल।">Rejuvenate your appearance with dermal fillers, Botox, thread lifts, and advanced anti-aging protocols.</p>
+      </div>
+      <div class="service-card reveal" style="--i:3">
+        <div class="service-icon"><i class="fas fa-leaf"></i></div>
+        <h3 data-en="Hair Loss Treatment" data-hi="बाल झड़ने का उपचार">Hair Loss Treatment</h3>
+        <p data-en="PRP therapy, mesotherapy, and medical hair restoration to combat hair thinning and promote regrowth." data-hi="बालों के पतले होने से लड़ने के लिए PRP थेरेपी, मेसोथेरेपी और मेडिकल हेयर रिस्टोरेशन।">PRP therapy, mesotherapy, and medical hair restoration to combat hair thinning and promote regrowth.</p>
+      </div>
+      <div class="service-card reveal" style="--i:4">
+        <div class="service-icon"><i class="fas fa-spa"></i></div>
+        <h3 data-en="Skin Rejuvenation" data-hi="त्वचा कायाकल्प">Skin Rejuvenation</h3>
+        <p data-en="HydraFacials, carbon laser peels, and collagen-boosting treatments for youthful, dewy, glowing skin." data-hi="युवा, चमकती त्वचा के लिए हाइड्राफेशियल, कार्बन लेजर पील और कोलेजन-बूस्टिंग उपचार।">HydraFacials, carbon laser peels, and collagen-boosting treatments for youthful, dewy, glowing skin.</p>
+      </div>
+      <div class="service-card reveal" style="--i:5">
+        <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3 data-en="Medical Dermatology" data-hi="चिकित्सा त्वचाविज्ञान">Medical Dermatology</h3>
+        <p data-en="Diagnosis and treatment of eczema, psoriasis, fungal infections, vitiligo, and other chronic skin conditions." data-hi="एक्जिमा, सोरायसिस, फंगल संक्रमण, विटिलिगो और अन्य पुरानी त्वचा स्थितियों का निदान और उपचार।">Diagnosis and treatment of eczema, psoriasis, fungal infections, vitiligo, and other chronic skin conditions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     REVIEWS
+     ═══════════════════════════════════════════ -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Patient Reviews" data-hi="मरीज समीक्षा">Patient Reviews</div>
+      <h2 class="section-title" data-en="What Our Patients Say" data-hi="हमारे मरीज क्या कहते हैं">What Our Patients Say</h2>
+      <p class="section-subtitle" data-en="Real stories from real patients. Your trust drives our commitment to excellence." data-hi="वास्तविक मरीजों की वास्तविक कहानियां। आपका विश्वास उत्कृष्टता के प्रति हमारी प्रतिबद्धता को बढ़ाता है।">Real stories from real patients. Your trust drives our commitment to excellence.</p>
+    </div>
+
+    <div class="review-overall reveal-scale">
+      <div class="big-rating">5.0</div>
+      <div class="stars-row">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <div class="review-count" data-en="Based on 10+ Google Reviews" data-hi="10+ गूगल समीक्षाओं पर आधारित">Based on 10+ Google Reviews</div>
+    </div>
+
+    <div class="reviews-wrapper stagger-children">
+      <div class="review-card reveal" style="--i:0">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text" data-en="Dr. Khandge is an amazing dermatologist. She listened to all my concerns patiently and the treatment she prescribed worked wonders for my skin. Highly recommended!" data-hi="डॉ. खांडगे एक अद्भुत त्वचा विशेषज्ञ हैं। उन्होंने मेरी सभी चिंताओं को धैर्यपूर्वक सुना और उन्होंने जो उपचार दिया वह मेरी त्वचा के लिए चमत्कारिक था।">Dr. Khandge is an amazing dermatologist. She listened to all my concerns patiently and the treatment she prescribed worked wonders for my skin. Highly recommended!</p>
+        <div class="review-author">
+          <div class="review-avatar">P</div>
+          <div class="review-author-info">
+            <div class="name">Priya M.</div>
+            <div class="date" data-en="2 months ago" data-hi="2 महीने पहले">2 months ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" style="--i:1">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text" data-en="Best experience ever! The clinic is clean and well-maintained. Dr. Aishwarya explained everything clearly and the results of my acne treatment have been incredible." data-hi="अब तक का सबसे अच्छा अनुभव! क्लिनिक साफ और अच्छी तरह से रखा हुआ है। डॉ. ऐश्वर्या ने सब कुछ स्पष्ट रूप से समझाया और मेरे मुंहासे उपचार के परिणाम अविश्वसनीय रहे हैं।">Best experience ever! The clinic is clean and well-maintained. Dr. Aishwarya explained everything clearly and the results of my acne treatment have been incredible.</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div class="review-author-info">
+            <div class="name">Rahul S.</div>
+            <div class="date" data-en="1 month ago" data-hi="1 महीने पहले">1 month ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card reveal" style="--i:2">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="review-text" data-en="I visited for hair fall treatment and the results were visible within weeks. Dr. Khandge is very knowledgeable and caring. The staff is also very cooperative." data-hi="मैंने बाल झड़ने के उपचार के लिए दौरा किया और कुछ ही हफ्तों में परिणाम दिखने लगे। डॉ. खांडगे बहुत जानकार और देखभाल करने वाली हैं।">I visited for hair fall treatment and the results were visible within weeks. Dr. Khandge is very knowledgeable and caring. The staff is also very cooperative.</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div class="review-author-info">
+            <div class="name">Sneha D.</div>
+            <div class="date" data-en="3 weeks ago" data-hi="3 सप्ताह पहले">3 weeks ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LOCATIONS
+     ═══════════════════════════════════════════ -->
+<section id="locations">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag" data-en="Our Clinics" data-hi="हमारे क्लिनिक">Our Clinics</div>
+      <h2 class="section-title" data-en="Visit Us at 3 Locations" data-hi="3 स्थानों पर हमसे मिलें">Visit Us at 3 Locations</h2>
+      <p class="section-subtitle" data-en="Conveniently located across Mumbai and Thane for easy access to expert dermatological care." data-hi="विशेषज्ञ त्वचाविज्ञान देखभाल तक आसान पहुंच के लिए मुंबई और ठाणे में सुविधाजनक स्थान।">Conveniently located across Mumbai and Thane for easy access to expert dermatological care.</p>
+    </div>
+
+    <div class="locations-grid stagger-children">
+      <!-- Sunder Clinic -->
+      <div class="location-card reveal" style="--i:0">
+        <div class="location-map">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&h=250&fit=crop" alt="Sunder Clinic">
+          <div class="location-map-overlay">
+            <div class="location-pin"><i class="fas fa-clinic-medical"></i></div>
+          </div>
+        </div>
+        <div class="location-info">
+          <h3 data-en="Sunder Clinic" data-hi="सुंदर क्लिनिक">Sunder Clinic</h3>
+          <div class="location-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-en="Ganesh Prasad, Bhandari CHS, Kanjurmarg East, Mumbai 400042" data-hi="गणेश प्रसाद, भंडारी CHS, कांजुरमार्ग पूर्व, मुंबई 400042">Ganesh Prasad, Bhandari CHS, Kanjurmarg East, Mumbai 400042</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <span data-en="Mon–Sat: 12:00 PM – 8:00 PM" data-hi="सोम–शनि: दोपहर 12:00 – रात 8:00">Mon–Sat: 12:00 PM – 8:00 PM</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <span>099871 26129</span>
+          </div>
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Sunder+Clinic+Bhandari+CHS+Kanjurmarg+East+Mumbai" target="_blank" class="location-btn location-btn-primary" data-en="Get Directions" data-hi="दिशा-निर्देश">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+            <a href="tel:09987126129" class="location-btn location-btn-secondary" data-en="Call Now" data-hi="कॉल करें">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shree Clinic -->
+      <div class="location-card reveal" style="--i:1">
+        <div class="location-map">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=500&h=250&fit=crop" alt="Shree Clinic">
+          <div class="location-map-overlay">
+            <div class="location-pin"><i class="fas fa-clinic-medical"></i></div>
+          </div>
+        </div>
+        <div class="location-info">
+          <h3 data-en="Shree Clinic" data-hi="श्री क्लिनिक">Shree Clinic</h3>
+          <div class="location-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-en="Neelam Nagar, Phase 2, Mulund East, Mumbai 400081" data-hi="नीलम नगर, फेज 2, मुलुंड पूर्व, मुंबई 400081">Neelam Nagar, Phase 2, Mulund East, Mumbai 400081</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <span data-en="Mon–Sat: 10:00 AM – 2:00 PM" data-hi="सोम–शनि: सुबह 10:00 – दोपहर 2:00">Mon–Sat: 10:00 AM – 2:00 PM</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <span>099871 26129</span>
+          </div>
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Shree+Clinic+Neelam+Nagar+Mulund+East+Mumbai" target="_blank" class="location-btn location-btn-primary" data-en="Get Directions" data-hi="दिशा-निर्देश">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+            <a href="tel:09987126129" class="location-btn location-btn-secondary" data-en="Call Now" data-hi="कॉल करें">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chandrika Clinic -->
+      <div class="location-card reveal" style="--i:2">
+        <div class="location-map">
+          <img src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=500&h=250&fit=crop" alt="Chandrika Clinic">
+          <div class="location-map-overlay">
+            <div class="location-pin"><i class="fas fa-clinic-medical"></i></div>
+          </div>
+        </div>
+        <div class="location-info">
+          <h3 data-en="Chandrika Clinic" data-hi="चंद्रिका क्लिनिक">Chandrika Clinic</h3>
+          <div class="location-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-en="Omkar Plaza, near Panch Parmeshwar Temple, Kisan Nagar No. 1, Wagle Estate, Thane West" data-hi="ओमकार प्लाजा, पंच परमेश्वर मंदिर के पास, किसान नगर नं. 1, वागले एस्टेट, ठाणे पश्चिम">Omkar Plaza, near Panch Parmeshwar Temple, Kisan Nagar No. 1, Wagle Estate, Thane West</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-clock"></i>
+            <span data-en="Mon–Sat: 5:00 PM – 9:00 PM" data-hi="सोम–शनि: शाम 5:00 – रात 9:00">Mon–Sat: 5:00 PM – 9:00 PM</span>
+          </div>
+          <div class="location-detail">
+            <i class="fas fa-phone"></i>
+            <span>099871 26129</span>
+          </div>
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Chandrika+Clinic+Omkar+Plaza+Wagle+Estate+Thane+West" target="_blank" class="location-btn location-btn-primary" data-en="Get Directions" data-hi="दिशा-निर्देश">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+            <a href="tel:09987126129" class="location-btn location-btn-secondary" data-en="Call Now" data-hi="कॉल करें">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA
+     ═══════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content reveal-scale">
+      <h2 data-en="Ready for Radiant Skin?" data-hi="चमकती त्वचा के लिए तैयार हैं?">Ready for Radiant Skin?</h2>
+      <p data-en="Book your consultation today and take the first step towards healthier, more confident skin." data-hi="आज ही अपनी परामर्श बुक करें और स्वस्थ, अधिक आत्मविश्वासी त्वचा की ओर पहला कदम उठाएं।">Book your consultation today and take the first step towards healthier, more confident skin.</p>
+      <div class="cta-buttons">
+        <a href="tel:09987126129" class="btn-cta-primary">
+          <i class="fas fa-phone"></i>
+          <span data-en="Call 099871 26129" data-hi="कॉल करें 099871 26129">Call 099871 26129</span>
+        </a>
+        <a href="https://wa.me/919987126129" target="_blank" class="btn-cta-secondary">
+          <i class="fab fa-whatsapp"></i>
+          <span data-en="WhatsApp Us" data-hi="व्हाट्सएप करें">WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name" data-en="Dr. Aishwarya Khandge" data-hi="डॉ. ऐश्वर्या खांडगे">Dr. Aishwarya Khandge</div>
+        <p class="desc" data-en="Expert dermatologist providing world-class skin care solutions across Mumbai and Thane. Your journey to healthy, radiant skin starts here." data-hi="मुंबई और ठाणे में विश्व स्तरीय त्वचा देखभाल समाधान प्रदान करने वाली विशेषज्ञ त्वचा विशेषज्ञ।">Expert dermatologist providing world-class skin care solutions across Mumbai and Thane. Your journey to healthy, radiant skin starts here.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919987126129" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
+        <a href="#about" data-en="About" data-hi="परिचय">About</a>
+        <a href="#services" data-en="Services" data-hi="सेवाएं">Services</a>
+        <a href="#reviews" data-en="Reviews" data-hi="समीक्षा">Reviews</a>
+        <a href="#locations" data-en="Locations" data-hi="स्थान">Locations</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Services" data-hi="सेवाएं">Services</h4>
+        <a href="#services" data-en="Acne Treatment" data-hi="मुंहासे उपचार">Acne Treatment</a>
+        <a href="#services" data-en="Hair Loss" data-hi="बाल झड़ना">Hair Loss</a>
+        <a href="#services" data-en="Skin Rejuvenation" data-hi="त्वचा कायाकल्प">Skin Rejuvenation</a>
+        <a href="#services" data-en="Anti-Aging" data-hi="एंटी-एजिंग">Anti-Aging</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+        <a href="tel:09987126129"><i class="fas fa-phone" style="margin-right:8px;font-size:12px;color:var(--accent)"></i>099871 26129</a>
+        <a href="https://wa.me/919987126129"><i class="fab fa-whatsapp" style="margin-right:8px;font-size:12px;color:var(--accent)"></i>WhatsApp</a>
+        <a href="https://maps.google.com/?q=Sunder+Clinic+Kanjurmarg" target="_blank"><i class="fas fa-map" style="margin-right:8px;font-size:12px;color:var(--accent)"></i>Google Maps</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-en="© 2026 Dr. Aishwarya Khandge. All rights reserved." data-hi="© 2026 डॉ. ऐश्वर्या खांडगे। सर्वाधिकार सुरक्षित।">© 2026 Dr. Aishwarya Khandge. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919987126129" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+// ─── LOCATION DATA ───
+const locations = [
+  {
+    id: 0,
+    nameEn: "Sunder Clinic",
+    nameHi: "सुंदर क्लिनिक",
+    locLineEn: "Sunder Clinic — Kanjurmarg East",
+    locLineHi: "सुंदर क्लिनिक — कांजुरमार्ग पूर्व",
+    titleEn: 'Radiant Skin,<br><span class="highlight">Confident You</span>',
+    titleHi: 'चमकती त्वचा,<br><span class="highlight">आत्मविश्वासी आप</span>',
+    subtitleEn: "Expert dermatological care by Dr. Aishwarya Khandge. From advanced skin treatments to personalized skincare — your journey to healthy, glowing skin starts here.",
+    subtitleHi: "डॉ. ऐश्वर्या खांडगे द्वारा विशेषज्ञ त्वचाविज्ञान देखभाल। उन्नत त्वचा उपचार से लेकर व्यक्तिगत स्किनकेयर तक — आपकी स्वस्थ, चमकती त्वचा की यात्रा यहां से शुरू होती है।",
+    heroImg: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=900&fit=crop",
+    orbColor: "rgba(184,134,11,0.15)"
+  },
+  {
+    id: 1,
+    nameEn: "Shree Clinic",
+    nameHi: "श्री क्लिनिक",
+    locLineEn: "Shree Clinic — Mulund East",
+    locLineHi: "श्री क्लिनिक — मुलुंड पूर्व",
+    titleEn: 'Your Skin,<br><span class="highlight">Our Priority</span>',
+    titleHi: 'आपकी त्वचा,<br><span class="highlight">हमारी प्राथमिकता</span>',
+    subtitleEn: "Visit our Mulund East clinic for comprehensive dermatology solutions. Personalized care in a modern, welcoming environment at Neelam Nagar.",
+    subtitleHi: "व्यापक त्वचाविज्ञान समाधानों के लिए हमारे मुलुंड पूर्व क्लिनिक पर जाएं। नीलम नगर में आधुनिक, स्वागत योग्य वातावरण में व्यक्तिगत देखभाल।",
+    heroImg: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1600&h=900&fit=crop",
+    orbColor: "rgba(46,125,50,0.12)"
+  },
+  {
+    id: 2,
+    nameEn: "Chandrika Clinic",
+    nameHi: "चंद्रिका क्लिनिक",
+    locLineEn: "Chandrika Clinic — Thane West",
+    locLineHi: "चंद्रिका क्लिनिक — ठाणे पश्चिम",
+    titleEn: 'Glow With<br><span class="highlight">Expert Care</span>',
+    titleHi: 'विशेषज्ञ देखभाल से<br><span class="highlight">चमकें</span>',
+    subtitleEn: "Our Thane West location at Omkar Plaza brings Dr. Khandge's expertise closer to you. Evening consultations available for your convenience.",
+    subtitleHi: "ओमकार प्लाज़ा में हमारा ठाणे पश्चिम स्थान डॉ. खांडगे की विशेषज्ञता आपके करीब लाता है। आपकी सुविधा के लिए शाम को परामर्श उपलब्ध।",
+    heroImg: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=1600&h=900&fit=crop",
+    orbColor: "rgba(120,80,200,0.10)"
+  }
+];
+
+let currentLoc = 0;
+let currentLang = 'en';
+
+// ─── THEME TOGGLE ───
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('themeTog').innerHTML = isDark
+    ? '<i class="fas fa-moon"></i>'
+    : '<i class="fas fa-sun"></i>';
+}
+
+// ─── LANGUAGE TOGGLE ───
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.getElementById('langLabel').textContent = currentLang === 'en' ? 'HI' : 'EN';
+  document.body.classList.toggle('hindi', currentLang === 'hi');
+  
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute(currentLang === 'en' ? 'data-en' : 'data-hi');
+    if (text) el.textContent = text;
+  });
+
+  // Update hero dynamic content
+  updateHero(currentLoc, false);
+}
+
+// ─── LOCATION SWITCH ───
+function switchLocation(locIndex) {
+  if (locIndex === currentLoc) return;
+  currentLoc = locIndex;
+  
+  // Update active tab
+  document.querySelectorAll('.loc-tab').forEach(tab => {
+    tab.classList.toggle('active', parseInt(tab.dataset.loc) === locIndex);
+  });
+
+  updateHero(locIndex, true);
+}
+
+function updateHero(locIndex, animate) {
+  const loc = locations[locIndex];
+  const heroTitle = document.getElementById('heroTitle');
+  const heroSub = document.getElementById('heroSubtitle');
+  const heroLocName = document.getElementById('heroLocName');
+  const heroBg = document.getElementById('heroBg');
+
+  if (animate) {
+    // Fade out
+    heroTitle.style.opacity = '0';
+    heroTitle.style.transform = 'translateY(20px)';
+    heroSub.style.opacity = '0';
+    heroSub.style.transform = 'translateY(20px)';
+    heroLocName.style.opacity = '0';
+    heroBg.style.opacity = '0';
+
+    setTimeout(() => {
+      heroTitle.innerHTML = currentLang === 'en' ? loc.titleEn : loc.titleHi;
+      heroSub.textContent = currentLang === 'en' ? loc.subtitleEn : loc.subtitleHi;
+      heroLocName.innerHTML = `<i class="fas fa-map-marker-alt"></i><span>${currentLang === 'en' ? loc.locLineEn : loc.locLineHi}</span>`;
+      heroBg.style.backgroundImage = `url(${loc.heroImg})`;
+
+      // Fade in
+      setTimeout(() => {
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
+        heroSub.style.opacity = '1';
+        heroSub.style.transform = 'translateY(0)';
+        heroLocName.style.opacity = '1';
+        heroBg.style.opacity = '1';
+      }, 50);
+    }, 400);
+  } else {
+    heroTitle.innerHTML = currentLang === 'en' ? loc.titleEn : loc.titleHi;
+    heroSub.textContent = currentLang === 'en' ? loc.subtitleEn : loc.subtitleHi;
+    heroLocName.innerHTML = `<i class="fas fa-map-marker-alt"></i><span>${currentLang === 'en' ? loc.locLineEn : loc.locLineHi}</span>`;
+  }
+}
+
+// Add transition styles to hero elements
+['heroTitle', 'heroSubtitle', 'heroLocName'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.style.transition = 'opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo)';
+  }
+});
+
+// ─── TAB CLICK LISTENERS ───
+document.querySelectorAll('.loc-tab').forEach(tab => {
+  tab.addEventListener('click', () => switchLocation(parseInt(tab.dataset.loc)));
+});
+
+// ─── MOBILE MENU ───
+function toggleMobile() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('mobileMenuBtn');
+  nav.classList.toggle('open');
+  btn.innerHTML = nav.classList.contains('open') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+}
+function closeMobile() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+}
+
+// ─── NAVBAR SCROLL ───
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  const scrollY = window.scrollY;
+  navbar.classList.toggle('scrolled', scrollY > 50);
+  lastScroll = scrollY;
+});
+
+// ─── SCROLL REVEAL OBSERVER ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// ─── INITIAL HERO BG ───
+document.getElementById('heroBg').style.backgroundImage = `url(${locations[0].heroImg})`;
+</script>
+</body>
+</html>
