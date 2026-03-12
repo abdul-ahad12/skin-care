@@ -188,15 +188,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .nav-logo {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  overflow: hidden;
   flex-shrink: 0;
 }
 .nav-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 42px;
+  width: auto;
 }
 
 .nav-brand-text {
@@ -1215,7 +1211,7 @@ section {
   .location-tabs { display: none; }
   .mobile-menu-btn { display: flex; }
   .nav-brand-text { display: none; }
-  .nav-logo { width: 48px; height: 48px; }
+  .nav-logo img { height: 48px; }
   .mobile-clinic-bar {
     display: flex;
     position: fixed;
@@ -1246,7 +1242,7 @@ section {
 
 @media (max-width: 768px) {
   section { padding: 72px 0; }
-  .nav-logo { width: 52px; height: 52px; }
+  .nav-logo img { height: 52px; }
   .services-grid { grid-template-columns: 1fr; }
   .reviews-wrapper { grid-template-columns: 1fr; }
   .locations-grid { grid-template-columns: 1fr; }
@@ -1274,10 +1270,6 @@ section {
   <div class="nav-inner">
     <div class="nav-brand">
       <div class="nav-logo"><img src="image.png" alt="Dr. Aishwarya Khandge Logo"></div>
-      <div class="nav-brand-text">
-        <span class="name" data-en="Dr. Aishwarya Khandge" data-hi="डॉ. ऐश्वर्या खांडगे">Dr. Aishwarya Khandge</span>
-        <span class="title" data-en="Dermatologist" data-hi="त्वचारोग विशेषज्ञ">Dermatologist</span>
-      </div>
     </div>
 
     <div class="location-tabs" id="locationTabs">
