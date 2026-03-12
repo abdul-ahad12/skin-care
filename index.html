@@ -188,16 +188,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .nav-logo {
   width: 42px; height: 42px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: var(--ff-display);
-  box-shadow: 0 4px 16px var(--accent-glow);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-brand-text {
@@ -1243,7 +1241,7 @@ section {
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <div class="nav-brand">
-      <div class="nav-logo">AK</div>
+      <div class="nav-logo"><img src="image.png" alt="Dr. Aishwarya Khandge Logo"></div>
       <div class="nav-brand-text">
         <span class="name" data-en="Dr. Aishwarya Khandge" data-hi="डॉ. ऐश्वर्या खांडगे">Dr. Aishwarya Khandge</span>
         <span class="title" data-en="Dermatologist" data-hi="त्वचारोग विशेषज्ञ">Dermatologist</span>
@@ -1668,6 +1666,7 @@ section {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
+        <img src="image.png" alt="Dr. Aishwarya Khandge Logo" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
         <div class="name" data-en="Dr. Aishwarya Khandge" data-hi="डॉ. ऐश्वर्या खांडगे">Dr. Aishwarya Khandge</div>
         <p class="desc" data-en="Expert dermatologist providing world-class skin care solutions across Mumbai and Thane. Your journey to healthy, radiant skin starts here." data-hi="मुंबई और ठाणे में विश्व स्तरीय त्वचा देखभाल समाधान प्रदान करने वाली विशेषज्ञ त्वचा विशेषज्ञ।">Expert dermatologist providing world-class skin care solutions across Mumbai and Thane. Your journey to healthy, radiant skin starts here.</p>
         <div class="footer-socials">
